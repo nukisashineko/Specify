@@ -65,7 +65,7 @@ class SpecifyTest implements Test, SelfDescribing
     /**
      * Runs a test and collects its result in a TestResult instance.
      */
-    public function run(TestResult $result = null): TestResult
+    public function run(?TestResult $result = null): TestResult
     {
         try {
             call_user_func_array($this->test, $this->example);

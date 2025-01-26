@@ -35,7 +35,7 @@ trait SpecifyHooks
      * @param Closure|null $callable
      * @param callable|array $params
      */
-    private function runSpec(string $specification, Closure $callable = null, $params = [])
+    private function runSpec(string $specification, ?Closure $callable = null, $params = [])
     {
         if ($callable === null) {
             return;
@@ -204,12 +204,12 @@ trait SpecifyHooks
         }
     }
 
-    private function beforeSpecify(Closure $callable = null)
+    private function beforeSpecify(?Closure $callable = null)
     {
         $this->beforeSpecify[] = $callable->bindTo($this);
     }
 
-    private function afterSpecify(Closure $callable = null)
+    private function afterSpecify(?Closure $callable = null)
     {
         $this->afterSpecify[] = $callable->bindTo($this);
     }
